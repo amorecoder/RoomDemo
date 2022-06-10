@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerView()
 
-        subscriberViewModel.message.observe(this) {
-            it.getContentIfNotHandled()?.let {
+        subscriberViewModel.message.observe(this) { event ->
+            event.getContentIfNotHandled()?.let {
                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
         }
